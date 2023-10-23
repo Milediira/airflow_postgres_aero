@@ -22,8 +22,6 @@ echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" > .env
 bash run_docker.sh
 ~~~
 
-# airflow_metabase_start
-
 На сервере может возникать ошибка PermissionError: [Errno 13] Permission denied: '/opt/airflow/logs/scheduler/'. 
 Исправить можно, зайдя в директорию airflow и выполив команду:
 
