@@ -1,0 +1,165 @@
+[2023-10-20T12:00:03.770+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=nhl_stats_save/run_id=scheduled__2023-10-20T00:00:00+00:00/task_id=save_nhl_stats permission to 509
+[2023-10-20T12:00:03.824+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=nhl_stats_save/run_id=scheduled__2023-10-20T00:00:00+00:00/task_id=save_nhl_stats permission to 509
+[2023-10-20T12:00:03.866+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: nhl_stats_save.save_nhl_stats scheduled__2023-10-20T00:00:00+00:00 [queued]>
+[2023-10-20T12:00:03.873+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: nhl_stats_save.save_nhl_stats scheduled__2023-10-20T00:00:00+00:00 [queued]>
+[2023-10-20T12:00:03.874+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-20T12:00:03.892+0000] {taskinstance.py:1382} INFO - Executing <Task(NhlStatsSaveOperator): save_nhl_stats> on 2023-10-20 00:00:00+00:00
+[2023-10-20T12:00:03.898+0000] {standard_task_runner.py:57} INFO - Started process 75 to run task
+[2023-10-20T12:00:03.918+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'nhl_stats_save', 'save_nhl_stats', 'scheduled__2023-10-20T00:00:00+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/nhl_stats_save.py', '--cfg-path', '/tmp/tmpokjqoh76']
+[2023-10-20T12:00:03.920+0000] {standard_task_runner.py:85} INFO - Job 12: Subtask save_nhl_stats
+[2023-10-20T12:00:03.969+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:193: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2023-10-20T12:00:04.106+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=nhl_stats_save/run_id=scheduled__2023-10-20T00:00:00+00:00/task_id=save_nhl_stats permission to 509
+[2023-10-20T12:00:04.110+0000] {task_command.py:416} INFO - Running <TaskInstance: nhl_stats_save.save_nhl_stats scheduled__2023-10-20T00:00:00+00:00 [running]> on host aa2c00032764
+[2023-10-20T12:00:04.212+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='babintseva' AIRFLOW_CTX_DAG_ID='nhl_stats_save' AIRFLOW_CTX_TASK_ID='save_nhl_stats' AIRFLOW_CTX_EXECUTION_DATE='2023-10-20T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-10-20T00:00:00+00:00'
+[2023-10-20T12:00:04.720+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/plugins/nhl_stats_save_operator.py", line 67, in execute
+    self.save_data(data)
+  File "/opt/airflow/plugins/nhl_stats_save_operator.py", line 38, in save_data
+    (team, stats, splits) = self.parse_data(df)
+  File "/opt/airflow/plugins/nhl_stats_save_operator.py", line 29, in parse_data
+    stat = {'team_uid': team_uid, 'uid': stat_uid, 'load_date': load_date} | jsStat.get('type')
+TypeError: unsupported operand type(s) for |: 'dict' and 'dict'
+[2023-10-20T12:00:04.731+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=nhl_stats_save, task_id=save_nhl_stats, execution_date=20231020T000000, start_date=20231020T120003, end_date=20231020T120004
+[2023-10-20T12:00:04.745+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 12 for task save_nhl_stats (unsupported operand type(s) for |: 'dict' and 'dict'; 75)
+[2023-10-20T12:00:04.764+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-10-20T12:00:04.787+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-10-20T13:33:54.511+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=nhl_stats_save/run_id=scheduled__2023-10-20T00:00:00+00:00/task_id=save_nhl_stats permission to 509
+[2023-10-20T13:33:54.652+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=nhl_stats_save/run_id=scheduled__2023-10-20T00:00:00+00:00/task_id=save_nhl_stats permission to 509
+[2023-10-20T13:33:54.960+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: nhl_stats_save.save_nhl_stats scheduled__2023-10-20T00:00:00+00:00 [queued]>
+[2023-10-20T13:33:54.994+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: nhl_stats_save.save_nhl_stats scheduled__2023-10-20T00:00:00+00:00 [queued]>
+[2023-10-20T13:33:54.995+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-20T13:33:55.054+0000] {taskinstance.py:1382} INFO - Executing <Task(NhlStatsSaveOperator): save_nhl_stats> on 2023-10-20 00:00:00+00:00
+[2023-10-20T13:33:55.094+0000] {standard_task_runner.py:57} INFO - Started process 124 to run task
+[2023-10-20T13:33:55.154+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'nhl_stats_save', 'save_nhl_stats', 'scheduled__2023-10-20T00:00:00+00:00', '--job-id', '22', '--raw', '--subdir', 'DAGS_FOLDER/nhl_stats_save.py', '--cfg-path', '/tmp/tmp158wwkzg']
+[2023-10-20T13:33:55.157+0000] {standard_task_runner.py:85} INFO - Job 22: Subtask save_nhl_stats
+[2023-10-20T13:33:55.199+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.10/site-packages/***/settings.py:193: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2023-10-20T13:33:55.566+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=nhl_stats_save/run_id=scheduled__2023-10-20T00:00:00+00:00/task_id=save_nhl_stats permission to 509
+[2023-10-20T13:33:55.592+0000] {task_command.py:416} INFO - Running <TaskInstance: nhl_stats_save.save_nhl_stats scheduled__2023-10-20T00:00:00+00:00 [running]> on host 275f8ea92d2e
+[2023-10-20T13:33:56.292+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='babintseva' AIRFLOW_CTX_DAG_ID='nhl_stats_save' AIRFLOW_CTX_TASK_ID='save_nhl_stats' AIRFLOW_CTX_EXECUTION_DATE='2023-10-20T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-10-20T00:00:00+00:00'
+[2023-10-20T13:33:56.835+0000] {logging_mixin.py:151} INFO - {'team_uid': UUID('a38a1896-1a3b-4377-9152-aeff6fd7bad7'), 'uid': UUID('0e727c1f-e7c2-4aec-8682-3cabe1c9aac2'), 'load_date': datetime.datetime(2023, 10, 20, 13, 33, 56, 833624)}
+[2023-10-20T13:33:56.836+0000] {logging_mixin.py:151} INFO - {'displayName': 'statsSingleSeason', 'gameType': {'id': 'R', 'description': 'Regular season', 'postseason': False}}
+[2023-10-20T13:33:56.838+0000] {logging_mixin.py:151} INFO - {'team_uid': UUID('a38a1896-1a3b-4377-9152-aeff6fd7bad7'), 'uid': UUID('89735692-d2b0-4cb9-82c3-b9244b84f300'), 'load_date': datetime.datetime(2023, 10, 20, 13, 33, 56, 833624)}
+[2023-10-20T13:33:56.839+0000] {logging_mixin.py:151} INFO - {'displayName': 'regularSeasonStatRankings', 'gameType': None}
+[2023-10-20T13:33:56.840+0000] {logging_mixin.py:151} INFO - Вставка team:[{'uid': UUID('a38a1896-1a3b-4377-9152-aeff6fd7bad7'), 'id': 21, 'load_date': datetime.datetime(2023, 10, 20, 13, 33, 56, 833624)}]
+[2023-10-20T13:33:56.841+0000] {logging_mixin.py:151} INFO - Вставка stats:[{'team_uid': UUID('a38a1896-1a3b-4377-9152-aeff6fd7bad7'), 'uid': UUID('0e727c1f-e7c2-4aec-8682-3cabe1c9aac2'), 'load_date': datetime.datetime(2023, 10, 20, 13, 33, 56, 833624), 'displayName': 'statsSingleSeason', 'gameType': {'id': 'R', 'description': 'Regular season', 'postseason': False}}, {'team_uid': UUID('a38a1896-1a3b-4377-9152-aeff6fd7bad7'), 'uid': UUID('89735692-d2b0-4cb9-82c3-b9244b84f300'), 'load_date': datetime.datetime(2023, 10, 20, 13, 33, 56, 833624), 'displayName': 'regularSeasonStatRankings', 'gameType': None}]
+[2023-10-20T13:33:56.843+0000] {logging_mixin.py:151} INFO - Вставка splits:[{'stat_uid': UUID('0e727c1f-e7c2-4aec-8682-3cabe1c9aac2'), 'uid': UUID('61f574b5-d57c-4bf3-9b9c-91ec522d5bb4'), 'load_date': datetime.datetime(2023, 10, 20, 13, 33, 56, 833624), 'gamesPlayed': 4, 'wins': 4, 'losses': 0, 'ot': 0, 'pts': 8, 'ptPctg': '100.0', 'goalsPerGame': 3.5, 'goalsAgainstPerGame': 1.0, 'evGGARatio': 1.75, 'powerPlayPercentage': '15.4', 'powerPlayGoals': 2.0, 'powerPlayGoalsAgainst': 0.0, 'powerPlayOpportunities': 13.0, 'penaltyKillPercentage': '100.0', 'shotsPerGame': 39.5, 'shotsAllowed': 28.25, 'winScoreFirst': 1.0, 'winOppScoreFirst': 1.0, 'winLeadFirstPer': 1.0, 'winLeadSecondPer': 1.0, 'winOutshootOpp': 1.0, 'winOutshotByOpp': 1.0, 'faceOffsTaken': 243.0, 'faceOffsWon': 112.0, 'faceOffsLost': 131.0, 'faceOffWinPercentage': '46.1', 'shootingPctg': 8.9, 'savePctg': 0.965}, {'stat_uid': UUID('89735692-d2b0-4cb9-82c3-b9244b84f300'), 'uid': UUID('bf82a5f6-015a-4853-a9f9-b94013e1c788'), 'load_date': datetime.datetime(2023, 10, 20, 13, 33, 56, 833624), 'wins': '2nd', 'losses': '2nd', 'ot': '11th', 'pts': '2nd', 'ptPctg': '2nd', 'goalsPerGame': '7th', 'goalsAgainstPerGame': '1st', 'evGGARatio': '5th', 'powerPlayPercentage': '22nd', 'powerPlayGoals': '18th', 'powerPlayGoalsAgainst': '1st', 'powerPlayOpportunities': '20th', 'penaltyKillOpportunities': '25th', 'penaltyKillPercentage': '1st', 'shotsPerGame': '1st', 'shotsAllowed': '10th', 'winScoreFirst': '4th', 'winOppScoreFirst': '2nd', 'winLeadFirstPer': '8th', 'winLeadSecondPer': '4th', 'winOutshootOpp': '7th', 'winOutshotByOpp': '7th', 'faceOffsTaken': '16th', 'faceOffsWon': '20th', 'faceOffsLost': '24th', 'faceOffWinPercentage': '26th', 'savePctRank': '1st', 'shootingPctRank': '20th'}]
+[2023-10-20T13:33:56.935+0000] {base.py:73} INFO - Using connection ID 'conn_pg' for task execution.
+[2023-10-20T13:33:56.938+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/plugins/nhl_stats_save_operator.py", line 69, in execute
+    self.save_data(data)
+  File "/opt/airflow/plugins/nhl_stats_save_operator.py", line 45, in save_data
+    engine = pg_hook.get_sqlalchemy_engine(pg_hook)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/common/sql/hooks/sql.py", line 199, in get_sqlalchemy_engine
+    return create_engine(self.get_uri(), **engine_kwargs)
+TypeError: sqlalchemy.engine.create.create_engine() argument after ** must be a mapping, not PostgresHook
+[2023-10-20T13:33:56.971+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=nhl_stats_save, task_id=save_nhl_stats, execution_date=20231020T000000, start_date=20231020T133354, end_date=20231020T133356
+[2023-10-20T13:33:57.048+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 22 for task save_nhl_stats (sqlalchemy.engine.create.create_engine() argument after ** must be a mapping, not PostgresHook; 124)
+[2023-10-20T13:33:57.107+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-10-20T13:33:57.171+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-10-20T13:43:21.468+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=nhl_stats_save/run_id=scheduled__2023-10-20T00:00:00+00:00/task_id=save_nhl_stats permission to 509
+[2023-10-20T13:43:21.495+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=nhl_stats_save/run_id=scheduled__2023-10-20T00:00:00+00:00/task_id=save_nhl_stats permission to 509
+[2023-10-20T13:43:21.521+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: nhl_stats_save.save_nhl_stats scheduled__2023-10-20T00:00:00+00:00 [queued]>
+[2023-10-20T13:43:21.530+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: nhl_stats_save.save_nhl_stats scheduled__2023-10-20T00:00:00+00:00 [queued]>
+[2023-10-20T13:43:21.531+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-20T13:43:21.545+0000] {taskinstance.py:1382} INFO - Executing <Task(NhlStatsSaveOperator): save_nhl_stats> on 2023-10-20 00:00:00+00:00
+[2023-10-20T13:43:21.552+0000] {standard_task_runner.py:57} INFO - Started process 408 to run task
+[2023-10-20T13:43:21.555+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'nhl_stats_save', 'save_nhl_stats', 'scheduled__2023-10-20T00:00:00+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/nhl_stats_save.py', '--cfg-path', '/tmp/tmpj74k20ab']
+[2023-10-20T13:43:21.556+0000] {standard_task_runner.py:85} INFO - Job 24: Subtask save_nhl_stats
+[2023-10-20T13:43:21.569+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.10/site-packages/***/settings.py:193: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2023-10-20T13:43:21.605+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=nhl_stats_save/run_id=scheduled__2023-10-20T00:00:00+00:00/task_id=save_nhl_stats permission to 509
+[2023-10-20T13:43:21.608+0000] {task_command.py:416} INFO - Running <TaskInstance: nhl_stats_save.save_nhl_stats scheduled__2023-10-20T00:00:00+00:00 [running]> on host 275f8ea92d2e
+[2023-10-20T13:43:21.689+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='babintseva' AIRFLOW_CTX_DAG_ID='nhl_stats_save' AIRFLOW_CTX_TASK_ID='save_nhl_stats' AIRFLOW_CTX_EXECUTION_DATE='2023-10-20T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-10-20T00:00:00+00:00'
+[2023-10-20T13:43:21.897+0000] {logging_mixin.py:151} INFO - {'team_uid': UUID('782b4891-5eea-41f2-af07-a68c9323014d'), 'uid': UUID('0b72a527-e1bc-42f1-9e86-3dc3f2f034a3'), 'load_date': datetime.datetime(2023, 10, 20, 13, 43, 21, 896843)}
+[2023-10-20T13:43:21.898+0000] {logging_mixin.py:151} INFO - {'displayName': 'statsSingleSeason', 'gameType': {'id': 'R', 'description': 'Regular season', 'postseason': False}}
+[2023-10-20T13:43:21.899+0000] {logging_mixin.py:151} INFO - {'team_uid': UUID('782b4891-5eea-41f2-af07-a68c9323014d'), 'uid': UUID('10eb23a0-9d05-4e73-877c-f905993db9f7'), 'load_date': datetime.datetime(2023, 10, 20, 13, 43, 21, 896843)}
+[2023-10-20T13:43:21.899+0000] {logging_mixin.py:151} INFO - {'displayName': 'regularSeasonStatRankings', 'gameType': None}
+[2023-10-20T13:43:21.900+0000] {logging_mixin.py:151} INFO - Вставка team:[{'uid': UUID('782b4891-5eea-41f2-af07-a68c9323014d'), 'id': 21, 'load_date': datetime.datetime(2023, 10, 20, 13, 43, 21, 896843)}]
+[2023-10-20T13:43:21.900+0000] {logging_mixin.py:151} INFO - Вставка stats:[{'team_uid': UUID('782b4891-5eea-41f2-af07-a68c9323014d'), 'uid': UUID('0b72a527-e1bc-42f1-9e86-3dc3f2f034a3'), 'load_date': datetime.datetime(2023, 10, 20, 13, 43, 21, 896843), 'displayName': 'statsSingleSeason', 'gameType': {'id': 'R', 'description': 'Regular season', 'postseason': False}}, {'team_uid': UUID('782b4891-5eea-41f2-af07-a68c9323014d'), 'uid': UUID('10eb23a0-9d05-4e73-877c-f905993db9f7'), 'load_date': datetime.datetime(2023, 10, 20, 13, 43, 21, 896843), 'displayName': 'regularSeasonStatRankings', 'gameType': None}]
+[2023-10-20T13:43:21.901+0000] {logging_mixin.py:151} INFO - Вставка splits:[{'stat_uid': UUID('0b72a527-e1bc-42f1-9e86-3dc3f2f034a3'), 'uid': UUID('9356807d-a7d6-4ce2-a894-bda065bb60b4'), 'load_date': datetime.datetime(2023, 10, 20, 13, 43, 21, 896843), 'gamesPlayed': 4, 'wins': 4, 'losses': 0, 'ot': 0, 'pts': 8, 'ptPctg': '100.0', 'goalsPerGame': 3.5, 'goalsAgainstPerGame': 1.0, 'evGGARatio': 1.75, 'powerPlayPercentage': '15.4', 'powerPlayGoals': 2.0, 'powerPlayGoalsAgainst': 0.0, 'powerPlayOpportunities': 13.0, 'penaltyKillPercentage': '100.0', 'shotsPerGame': 39.5, 'shotsAllowed': 28.25, 'winScoreFirst': 1.0, 'winOppScoreFirst': 1.0, 'winLeadFirstPer': 1.0, 'winLeadSecondPer': 1.0, 'winOutshootOpp': 1.0, 'winOutshotByOpp': 1.0, 'faceOffsTaken': 243.0, 'faceOffsWon': 112.0, 'faceOffsLost': 131.0, 'faceOffWinPercentage': '46.1', 'shootingPctg': 8.9, 'savePctg': 0.965}, {'stat_uid': UUID('10eb23a0-9d05-4e73-877c-f905993db9f7'), 'uid': UUID('024d7274-28f9-4fd6-ac12-b624551145eb'), 'load_date': datetime.datetime(2023, 10, 20, 13, 43, 21, 896843), 'wins': '2nd', 'losses': '2nd', 'ot': '11th', 'pts': '2nd', 'ptPctg': '2nd', 'goalsPerGame': '7th', 'goalsAgainstPerGame': '1st', 'evGGARatio': '5th', 'powerPlayPercentage': '22nd', 'powerPlayGoals': '18th', 'powerPlayGoalsAgainst': '1st', 'powerPlayOpportunities': '20th', 'penaltyKillOpportunities': '25th', 'penaltyKillPercentage': '1st', 'shotsPerGame': '1st', 'shotsAllowed': '10th', 'winScoreFirst': '4th', 'winOppScoreFirst': '2nd', 'winLeadFirstPer': '8th', 'winLeadSecondPer': '4th', 'winOutshootOpp': '7th', 'winOutshotByOpp': '7th', 'faceOffsTaken': '16th', 'faceOffsWon': '20th', 'faceOffsLost': '24th', 'faceOffWinPercentage': '26th', 'savePctRank': '1st', 'shootingPctRank': '20th'}]
+[2023-10-20T13:43:21.911+0000] {base.py:73} INFO - Using connection ID 'conn_pg' for task execution.
+[2023-10-20T13:43:21.941+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/plugins/nhl_stats_save_operator.py", line 69, in execute
+    self.save_data(data)
+  File "/opt/airflow/plugins/nhl_stats_save_operator.py", line 46, in save_data
+    with conn.begin() as conn:
+AttributeError: 'psycopg2.extensions.connection' object has no attribute 'begin'
+[2023-10-20T13:43:21.962+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=nhl_stats_save, task_id=save_nhl_stats, execution_date=20231020T000000, start_date=20231020T134321, end_date=20231020T134321
+[2023-10-20T13:43:21.991+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 24 for task save_nhl_stats ('psycopg2.extensions.connection' object has no attribute 'begin'; 408)
+[2023-10-20T13:43:22.049+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-10-20T13:43:22.096+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-10-20T13:46:43.852+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=nhl_stats_save/run_id=scheduled__2023-10-20T00:00:00+00:00/task_id=save_nhl_stats permission to 509
+[2023-10-20T13:46:43.881+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=nhl_stats_save/run_id=scheduled__2023-10-20T00:00:00+00:00/task_id=save_nhl_stats permission to 509
+[2023-10-20T13:46:43.907+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: nhl_stats_save.save_nhl_stats scheduled__2023-10-20T00:00:00+00:00 [queued]>
+[2023-10-20T13:46:43.914+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: nhl_stats_save.save_nhl_stats scheduled__2023-10-20T00:00:00+00:00 [queued]>
+[2023-10-20T13:46:43.914+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-20T13:46:43.926+0000] {taskinstance.py:1382} INFO - Executing <Task(NhlStatsSaveOperator): save_nhl_stats> on 2023-10-20 00:00:00+00:00
+[2023-10-20T13:46:43.933+0000] {standard_task_runner.py:57} INFO - Started process 83 to run task
+[2023-10-20T13:46:43.936+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'nhl_stats_save', 'save_nhl_stats', 'scheduled__2023-10-20T00:00:00+00:00', '--job-id', '26', '--raw', '--subdir', 'DAGS_FOLDER/nhl_stats_save.py', '--cfg-path', '/tmp/tmppz337cd4']
+[2023-10-20T13:46:43.937+0000] {standard_task_runner.py:85} INFO - Job 26: Subtask save_nhl_stats
+[2023-10-20T13:46:43.947+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.10/site-packages/***/settings.py:193: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2023-10-20T13:46:43.976+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=nhl_stats_save/run_id=scheduled__2023-10-20T00:00:00+00:00/task_id=save_nhl_stats permission to 509
+[2023-10-20T13:46:43.979+0000] {task_command.py:416} INFO - Running <TaskInstance: nhl_stats_save.save_nhl_stats scheduled__2023-10-20T00:00:00+00:00 [running]> on host 0873a58b9a80
+[2023-10-20T13:46:44.038+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='babintseva' AIRFLOW_CTX_DAG_ID='nhl_stats_save' AIRFLOW_CTX_TASK_ID='save_nhl_stats' AIRFLOW_CTX_EXECUTION_DATE='2023-10-20T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-10-20T00:00:00+00:00'
+[2023-10-20T13:46:44.498+0000] {logging_mixin.py:151} INFO - {'team_uid': UUID('d68236a8-0e44-4af1-a9a8-b24c1f2167af'), 'uid': UUID('d8e193b9-35da-413a-8507-06d40303b861'), 'load_date': datetime.datetime(2023, 10, 20, 13, 46, 44, 497861)}
+[2023-10-20T13:46:44.498+0000] {logging_mixin.py:151} INFO - {'displayName': 'statsSingleSeason', 'gameType': {'id': 'R', 'description': 'Regular season', 'postseason': False}}
+[2023-10-20T13:46:44.499+0000] {logging_mixin.py:151} INFO - {'team_uid': UUID('d68236a8-0e44-4af1-a9a8-b24c1f2167af'), 'uid': UUID('cfd630bf-94a6-4098-ba45-7cb5605108ae'), 'load_date': datetime.datetime(2023, 10, 20, 13, 46, 44, 497861)}
+[2023-10-20T13:46:44.499+0000] {logging_mixin.py:151} INFO - {'displayName': 'regularSeasonStatRankings', 'gameType': None}
+[2023-10-20T13:46:44.500+0000] {logging_mixin.py:151} INFO - Вставка team:[{'uid': UUID('d68236a8-0e44-4af1-a9a8-b24c1f2167af'), 'id': 21, 'load_date': datetime.datetime(2023, 10, 20, 13, 46, 44, 497861)}]
+[2023-10-20T13:46:44.500+0000] {logging_mixin.py:151} INFO - Вставка stats:[{'team_uid': UUID('d68236a8-0e44-4af1-a9a8-b24c1f2167af'), 'uid': UUID('d8e193b9-35da-413a-8507-06d40303b861'), 'load_date': datetime.datetime(2023, 10, 20, 13, 46, 44, 497861), 'displayName': 'statsSingleSeason', 'gameType': {'id': 'R', 'description': 'Regular season', 'postseason': False}}, {'team_uid': UUID('d68236a8-0e44-4af1-a9a8-b24c1f2167af'), 'uid': UUID('cfd630bf-94a6-4098-ba45-7cb5605108ae'), 'load_date': datetime.datetime(2023, 10, 20, 13, 46, 44, 497861), 'displayName': 'regularSeasonStatRankings', 'gameType': None}]
+[2023-10-20T13:46:44.500+0000] {logging_mixin.py:151} INFO - Вставка splits:[{'stat_uid': UUID('d8e193b9-35da-413a-8507-06d40303b861'), 'uid': UUID('b614f834-650b-468f-bbea-63d43a31cc62'), 'load_date': datetime.datetime(2023, 10, 20, 13, 46, 44, 497861), 'gamesPlayed': 4, 'wins': 4, 'losses': 0, 'ot': 0, 'pts': 8, 'ptPctg': '100.0', 'goalsPerGame': 3.5, 'goalsAgainstPerGame': 1.0, 'evGGARatio': 1.75, 'powerPlayPercentage': '15.4', 'powerPlayGoals': 2.0, 'powerPlayGoalsAgainst': 0.0, 'powerPlayOpportunities': 13.0, 'penaltyKillPercentage': '100.0', 'shotsPerGame': 39.5, 'shotsAllowed': 28.25, 'winScoreFirst': 1.0, 'winOppScoreFirst': 1.0, 'winLeadFirstPer': 1.0, 'winLeadSecondPer': 1.0, 'winOutshootOpp': 1.0, 'winOutshotByOpp': 1.0, 'faceOffsTaken': 243.0, 'faceOffsWon': 112.0, 'faceOffsLost': 131.0, 'faceOffWinPercentage': '46.1', 'shootingPctg': 8.9, 'savePctg': 0.965}, {'stat_uid': UUID('cfd630bf-94a6-4098-ba45-7cb5605108ae'), 'uid': UUID('e55c8085-5f4c-43c1-a096-581862390a6b'), 'load_date': datetime.datetime(2023, 10, 20, 13, 46, 44, 497861), 'wins': '2nd', 'losses': '2nd', 'ot': '11th', 'pts': '2nd', 'ptPctg': '2nd', 'goalsPerGame': '7th', 'goalsAgainstPerGame': '1st', 'evGGARatio': '5th', 'powerPlayPercentage': '22nd', 'powerPlayGoals': '18th', 'powerPlayGoalsAgainst': '1st', 'powerPlayOpportunities': '20th', 'penaltyKillOpportunities': '25th', 'penaltyKillPercentage': '1st', 'shotsPerGame': '1st', 'shotsAllowed': '10th', 'winScoreFirst': '4th', 'winOppScoreFirst': '2nd', 'winLeadFirstPer': '8th', 'winLeadSecondPer': '4th', 'winOutshootOpp': '7th', 'winOutshotByOpp': '7th', 'faceOffsTaken': '16th', 'faceOffsWon': '20th', 'faceOffsLost': '24th', 'faceOffWinPercentage': '26th', 'savePctRank': '1st', 'shootingPctRank': '20th'}]
+[2023-10-20T13:46:44.508+0000] {base.py:73} INFO - Using connection ID 'conn_pg' for task execution.
+[2023-10-20T13:46:44.526+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.10/site-packages/pandas/io/sql.py:758: UserWarning: pandas only support SQLAlchemy connectable(engine/connection) ordatabase string URI or sqlite3 DBAPI2 connectionother DBAPI2 objects are not tested, please consider using SQLAlchemy
+  warnings.warn(
+
+[2023-10-20T13:46:44.537+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 2017, in execute
+    cur.execute(*args, **kwargs)
+psycopg2.errors.UndefinedTable: relation "sqlite_master" does not exist
+LINE 1: SELECT name FROM sqlite_master WHERE type='table' AND name=?...
+                         ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/airflow/plugins/nhl_stats_save_operator.py", line 69, in execute
+    self.save_data(data)
+  File "/opt/airflow/plugins/nhl_stats_save_operator.py", line 49, in save_data
+    df.to_sql('team', conn, if_exists='append', index=False)
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/core/generic.py", line 2963, in to_sql
+    return sql.to_sql(
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 697, in to_sql
+    return pandas_sql.to_sql(
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 2186, in to_sql
+    table.create()
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 828, in create
+    if self.exists():
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 812, in exists
+    return self.pd_sql.has_table(self.name, self.schema)
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 2194, in has_table
+    return len(self.execute(query, [name]).fetchall()) > 0
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 2029, in execute
+    raise ex from exc
+pandas.io.sql.DatabaseError: Execution failed on sql 'SELECT name FROM sqlite_master WHERE type='table' AND name=?;': relation "sqlite_master" does not exist
+LINE 1: SELECT name FROM sqlite_master WHERE type='table' AND name=?...
+                         ^
+
+[2023-10-20T13:46:44.549+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=nhl_stats_save, task_id=save_nhl_stats, execution_date=20231020T000000, start_date=20231020T134643, end_date=20231020T134644
+[2023-10-20T13:46:44.562+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 26 for task save_nhl_stats (Execution failed on sql 'SELECT name FROM sqlite_master WHERE type='table' AND name=?;': relation "sqlite_master" does not exist
+LINE 1: SELECT name FROM sqlite_master WHERE type='table' AND name=?...
+                         ^
+; 83)
+[2023-10-20T13:46:44.590+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-10-20T13:46:44.609+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

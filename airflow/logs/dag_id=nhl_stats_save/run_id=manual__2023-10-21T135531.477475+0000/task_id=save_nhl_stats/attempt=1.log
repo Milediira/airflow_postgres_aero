@@ -1,0 +1,77 @@
+[2023-10-21T13:55:34.901+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=nhl_stats_save/run_id=manual__2023-10-21T13:55:31.477475+00:00/task_id=save_nhl_stats permission to 509
+[2023-10-21T13:55:34.949+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=nhl_stats_save/run_id=manual__2023-10-21T13:55:31.477475+00:00/task_id=save_nhl_stats permission to 509
+[2023-10-21T13:55:34.997+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: nhl_stats_save.save_nhl_stats manual__2023-10-21T13:55:31.477475+00:00 [queued]>
+[2023-10-21T13:55:35.014+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: nhl_stats_save.save_nhl_stats manual__2023-10-21T13:55:31.477475+00:00 [queued]>
+[2023-10-21T13:55:35.015+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-21T13:55:35.036+0000] {taskinstance.py:1382} INFO - Executing <Task(NhlStatsSaveOperator): save_nhl_stats> on 2023-10-21 13:55:31.477475+00:00
+[2023-10-21T13:55:35.048+0000] {standard_task_runner.py:57} INFO - Started process 1351 to run task
+[2023-10-21T13:55:35.052+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'nhl_stats_save', 'save_nhl_stats', 'manual__2023-10-21T13:55:31.477475+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/nhl_stats_save.py', '--cfg-path', '/tmp/tmp_fpmx0aj']
+[2023-10-21T13:55:35.054+0000] {standard_task_runner.py:85} INFO - Job 14: Subtask save_nhl_stats
+[2023-10-21T13:55:35.077+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.10/site-packages/***/settings.py:193: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2023-10-21T13:55:35.129+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=nhl_stats_save/run_id=manual__2023-10-21T13:55:31.477475+00:00/task_id=save_nhl_stats permission to 509
+[2023-10-21T13:55:35.134+0000] {task_command.py:416} INFO - Running <TaskInstance: nhl_stats_save.save_nhl_stats manual__2023-10-21T13:55:31.477475+00:00 [running]> on host f4f5d56d4cc2
+[2023-10-21T13:55:35.269+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='babintseva' AIRFLOW_CTX_DAG_ID='nhl_stats_save' AIRFLOW_CTX_TASK_ID='save_nhl_stats' AIRFLOW_CTX_EXECUTION_DATE='2023-10-21T13:55:31.477475+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-10-21T13:55:31.477475+00:00'
+[2023-10-21T13:55:36.347+0000] {logging_mixin.py:151} INFO - {'team_uid': UUID('764ca470-eb0b-44b4-8d13-6ea1a3e39e77'), 'uid': UUID('6e2a0cd1-1239-4d58-ae11-e11d583e8fc2')}
+[2023-10-21T13:55:36.349+0000] {logging_mixin.py:151} INFO - {'displayName': 'statsSingleSeason', 'gameType': {'id': 'R', 'description': 'Regular season', 'postseason': False}}
+[2023-10-21T13:55:36.350+0000] {logging_mixin.py:151} INFO - {'team_uid': UUID('764ca470-eb0b-44b4-8d13-6ea1a3e39e77'), 'uid': UUID('c95f5ee5-001d-4f6c-a2a6-51932c2c6154')}
+[2023-10-21T13:55:36.352+0000] {logging_mixin.py:151} INFO - {'displayName': 'regularSeasonStatRankings', 'gameType': None}
+[2023-10-21T13:55:36.353+0000] {logging_mixin.py:151} INFO - Вставка team:[{'uid': UUID('764ca470-eb0b-44b4-8d13-6ea1a3e39e77'), 'id': 21}]
+[2023-10-21T13:55:36.354+0000] {logging_mixin.py:151} INFO - Вставка stats:[{'team_uid': UUID('764ca470-eb0b-44b4-8d13-6ea1a3e39e77'), 'uid': UUID('6e2a0cd1-1239-4d58-ae11-e11d583e8fc2'), 'displayName': 'statsSingleSeason', 'gameType': {'id': 'R', 'description': 'Regular season', 'postseason': False}}, {'team_uid': UUID('764ca470-eb0b-44b4-8d13-6ea1a3e39e77'), 'uid': UUID('c95f5ee5-001d-4f6c-a2a6-51932c2c6154'), 'displayName': 'regularSeasonStatRankings', 'gameType': None}]
+[2023-10-21T13:55:36.356+0000] {logging_mixin.py:151} INFO - Вставка splits:[{'stat_uid': UUID('6e2a0cd1-1239-4d58-ae11-e11d583e8fc2'), 'uid': UUID('bd631581-6f97-4b55-95f7-110669cd1862'), 'gamesPlayed': 4, 'wins': 4, 'losses': 0, 'ot': 0, 'pts': 8, 'ptPctg': '100.0', 'goalsPerGame': 3.5, 'goalsAgainstPerGame': 1.0, 'evGGARatio': 1.75, 'powerPlayPercentage': '15.4', 'powerPlayGoals': 2.0, 'powerPlayGoalsAgainst': 0.0, 'powerPlayOpportunities': 13.0, 'penaltyKillPercentage': '100.0', 'shotsPerGame': 39.5, 'shotsAllowed': 28.25, 'winScoreFirst': 1.0, 'winOppScoreFirst': 1.0, 'winLeadFirstPer': 1.0, 'winLeadSecondPer': 1.0, 'winOutshootOpp': 1.0, 'winOutshotByOpp': 1.0, 'faceOffsTaken': 243.0, 'faceOffsWon': 112.0, 'faceOffsLost': 131.0, 'faceOffWinPercentage': '46.1', 'shootingPctg': 8.9, 'savePctg': 0.965}, {'stat_uid': UUID('c95f5ee5-001d-4f6c-a2a6-51932c2c6154'), 'uid': UUID('09711140-a7bb-412d-8db5-48586bc5390f'), 'wins': '2nd', 'losses': '2nd', 'ot': '12th', 'pts': '2nd', 'ptPctg': '2nd', 'goalsPerGame': '8th', 'goalsAgainstPerGame': '1st', 'evGGARatio': '6th', 'powerPlayPercentage': '21st', 'powerPlayGoals': '18th', 'powerPlayGoalsAgainst': '1st', 'powerPlayOpportunities': '20th', 'penaltyKillOpportunities': '23rd', 'penaltyKillPercentage': '1st', 'shotsPerGame': '1st', 'shotsAllowed': '10th', 'winScoreFirst': '4th', 'winOppScoreFirst': '2nd', 'winLeadFirstPer': '8th', 'winLeadSecondPer': '4th', 'winOutshootOpp': '7th', 'winOutshotByOpp': '7th', 'faceOffsTaken': '16th', 'faceOffsWon': '21st', 'faceOffsLost': '23rd', 'faceOffWinPercentage': '27th', 'savePctRank': '1st', 'shootingPctRank': '19th'}]
+[2023-10-21T13:55:36.509+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1810, in _execute_context
+    context = constructor(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 1121, in _init_compiled
+    param = {
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 1122, in <dictcomp>
+    key: processors[key](compiled_params[key])
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 610, in process
+    value = _python_UUID(value)
+  File "/usr/local/lib/python3.10/uuid.py", line 174, in __init__
+    hex = hex.replace('urn:', '').replace('uuid:', '')
+AttributeError: 'UUID' object has no attribute 'replace'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/airflow/plugins/nhl_stats_save_operator.py", line 84, in execute
+    self.save_data(data)
+  File "/opt/airflow/plugins/nhl_stats_save_operator.py", line 51, in save_data
+    table.insert_many(rows=team, chunk_size=10000)
+  File "/home/airflow/.local/lib/python3.10/site-packages/dataset/table.py", line 184, in insert_many
+    self.table.insert().execute(chunk)
+  File "<string>", line 2, in execute
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/deprecations.py", line 468, in warned
+    return fn(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/sql/base.py", line 965, in execute
+    return e._execute_clauseelement(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1816, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1810, in _execute_context
+    context = constructor(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 1121, in _init_compiled
+    param = {
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 1122, in <dictcomp>
+    key: processors[key](compiled_params[key])
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 610, in process
+    value = _python_UUID(value)
+  File "/usr/local/lib/python3.10/uuid.py", line 174, in __init__
+    hex = hex.replace('urn:', '').replace('uuid:', '')
+sqlalchemy.exc.StatementError: (builtins.AttributeError) 'UUID' object has no attribute 'replace'
+[SQL: INSERT INTO team (uid, id) VALUES (%(uid)s, %(id)s)]
+[parameters: [{'uid': UUID('764ca470-eb0b-44b4-8d13-6ea1a3e39e77'), 'id': 21}]]
+[2023-10-21T13:55:36.545+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=nhl_stats_save, task_id=save_nhl_stats, execution_date=20231021T135531, start_date=20231021T135534, end_date=20231021T135536
+[2023-10-21T13:55:36.569+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 14 for task save_nhl_stats ((builtins.AttributeError) 'UUID' object has no attribute 'replace'
+[SQL: INSERT INTO team (uid, id) VALUES (%(uid)s, %(id)s)]
+[parameters: [{'uid': UUID('764ca470-eb0b-44b4-8d13-6ea1a3e39e77'), 'id': 21}]]; 1351)
+[2023-10-21T13:55:36.594+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-10-21T13:55:36.647+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,40 @@
+version: '3'
+services:
+    pgadmin-compose:
+        image: dpage/pgadmin4
+        environment:
+            PGADMIN_DEFAULT_EMAIL: "test@gmail.com"
+            PGADMIN_DEFAULT_PASSWORD: "test123!"
+        ports:
+            - 16543:80
+        depends_on:
+            - postgres-collect_data
+
+    postgres-collect_data:
+        image: postgres:13-alpine
+        healthcheck:
+            test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "postgres" ]
+            timeout: 45s
+            interval: 10s
+            retries: 10
+        restart: always
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+            - POSTGRES_DB=postgres
+            - APP_DB_USER=db_homework
+            - APP_DB_PASS=db_homework
+            - APP_DB_NAME=db_homework
+            - PGDATA=/var/lib/postgresql/data
+        volumes:
+            - postgres-vol:/var/lib/postgresql/data
+            - ./db:/docker-entrypoint-initdb.d/
+        ports:
+            - "5434:5432"
+        expose:
+            -   5434
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+
+volumes:
+      postgres-vol:

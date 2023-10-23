@@ -1,0 +1,131 @@
+[2023-10-21T12:04:56.997+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=random_cannabis_save/run_id=manual__2023-10-21T12:04:52.753799+00:00/task_id=get_random_cannabis permission to 509
+[2023-10-21T12:04:57.050+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=random_cannabis_save/run_id=manual__2023-10-21T12:04:52.753799+00:00/task_id=get_random_cannabis permission to 509
+[2023-10-21T12:04:57.098+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: random_cannabis_save.get_random_cannabis manual__2023-10-21T12:04:52.753799+00:00 [queued]>
+[2023-10-21T12:04:57.114+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: random_cannabis_save.get_random_cannabis manual__2023-10-21T12:04:52.753799+00:00 [queued]>
+[2023-10-21T12:04:57.115+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-21T12:04:57.137+0000] {taskinstance.py:1382} INFO - Executing <Task(RandomCannabisOperator): get_random_cannabis> on 2023-10-21 12:04:52.753799+00:00
+[2023-10-21T12:04:57.147+0000] {standard_task_runner.py:57} INFO - Started process 77 to run task
+[2023-10-21T12:04:57.155+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'random_cannabis_save', 'get_random_cannabis', 'manual__2023-10-21T12:04:52.753799+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/random_cannabis_save.py', '--cfg-path', '/tmp/tmpefp2r3bx']
+[2023-10-21T12:04:57.157+0000] {standard_task_runner.py:85} INFO - Job 14: Subtask get_random_cannabis
+[2023-10-21T12:04:57.181+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.10/site-packages/***/settings.py:193: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2023-10-21T12:04:57.241+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=random_cannabis_save/run_id=manual__2023-10-21T12:04:52.753799+00:00/task_id=get_random_cannabis permission to 509
+[2023-10-21T12:04:57.246+0000] {task_command.py:416} INFO - Running <TaskInstance: random_cannabis_save.get_random_cannabis manual__2023-10-21T12:04:52.753799+00:00 [running]> on host 679bb130cded
+[2023-10-21T12:04:57.354+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='babintseva' AIRFLOW_CTX_DAG_ID='random_cannabis_save' AIRFLOW_CTX_TASK_ID='get_random_cannabis' AIRFLOW_CTX_EXECUTION_DATE='2023-10-21T12:04:52.753799+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-10-21T12:04:52.753799+00:00'
+[2023-10-21T12:04:58.402+0000] {base.py:73} INFO - Using connection ID 'conn_pg' for task execution.
+[2023-10-21T12:04:58.405+0000] {logging_mixin.py:151} INFO - postgresql://***:***@192.168.1.113:5434/***?__extra__=%7B%7D
+[2023-10-21T12:04:58.407+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 145, in _do_get
+    with util.safe_reraise():
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Cannot assign requested address
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/airflow/plugins/random_cannabis_operator.py", line 44, in execute
+    self.save_data(data)
+  File "/opt/airflow/plugins/random_cannabis_operator.py", line 22, in save_data
+    db.begin()
+  File "/home/airflow/.local/lib/python3.10/site-packages/dataset/database.py", line 121, in begin
+    self.local.tx.append(self.executable.begin())
+  File "/home/airflow/.local/lib/python3.10/site-packages/dataset/database.py", line 83, in executable
+    self.connections[tid] = self.engine.connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3374, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2208, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 145, in _do_get
+    with util.safe_reraise():
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Cannot assign requested address
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2023-10-21T12:04:58.433+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=random_cannabis_save, task_id=get_random_cannabis, execution_date=20231021T120452, start_date=20231021T120457, end_date=20231021T120458
+[2023-10-21T12:04:58.453+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 14 for task get_random_cannabis ((psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Cannot assign requested address
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8); 77)
+[2023-10-21T12:04:58.496+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-10-21T12:04:58.532+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
